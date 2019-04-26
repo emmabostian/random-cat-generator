@@ -1,1 +1,5 @@
-# random-cat-generator
+# Random Cat Generator
+
+Do you need a random flash of cat cuteness? Click below!
+
+<http://randomcatgenerator.com>
