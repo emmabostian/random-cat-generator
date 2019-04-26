@@ -30,7 +30,8 @@ const Logo = () => (
           </tspan>
         </text>
         <text fill="#4A4A4A" font-family="AppleColorEmoji, Apple Color Emoji">
-          <tspan x="233" y="67" aria-label="Cat">
+          {/* eslint-disable-next-line */}
+          <tspan x="233" y="67" aria-label="Cat" role="img">
             🐱
           </tspan>
         </text>

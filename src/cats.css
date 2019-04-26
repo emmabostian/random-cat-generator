@@ -2,7 +2,7 @@
   opacity: 0;
   transition: opacity 0.1s linear;
   width: 450px;
-  height: 200px;
+  max-height: 300px;
 }
 
 .catImage--visible {
