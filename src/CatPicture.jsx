@@ -46,20 +46,22 @@ class CatPicture extends Component {
   render() {
     return (
       <React.Fragment>
+        <div id="catWrapper">
         <div id="catContainer">
           {this.state.catImage && (
             <img
-              src={this.state.catImage}
-              onLoad={this.showCatImage}
-              alt="Cat"
-              className="catImage"
+            src={this.state.catImage}
+            onLoad={this.showCatImage}
+            alt="Cat"
+            className="catImage"
             />
-          )}
+            )}
           {this.state.loading && <Spinner />}
           <button className="newCatButton" onClick={this.getCatPicture}>
             New cat
           </button>
         </div>
+      </div>
       </React.Fragment>
     );
   }
