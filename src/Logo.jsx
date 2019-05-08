@@ -16,7 +16,7 @@ const Logo = () => (
         transform="translate(-9 -11)"
       >
         <text fill="#FF877C" font-family="AndaleMono, Andale Mono">
-          <tspan x="0" y="54">
+          <tspan x="10" y="54">
             random{" "}
           </tspan>{" "}
           <tspan
@@ -26,7 +26,7 @@ const Logo = () => (
           >
             {" "}
           </tspan>{" "}
-          <tspan x="312.041" y="54">
+          <tspan x="352.041" y="54">
             generator
           </tspan>
         </text>
