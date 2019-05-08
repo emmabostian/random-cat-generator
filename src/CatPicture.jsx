@@ -47,6 +47,7 @@ class CatPicture extends Component {
   render() {
     return (
       <React.Fragment>
+        <div id="catWrapper">
         <div id="catContainer">
           {this.state.catImage && (
             <img
@@ -55,12 +56,13 @@ class CatPicture extends Component {
               alt="Cat"
               className={"catImage" + (this.state.showCatImage ? " catImage--visible" : "")}
             />
-          )}
+            )}
           {this.state.loading && <Spinner />}
           <button className="newCatButton" onClick={this.getCatPicture}>
             New cat
           </button>
         </div>
+      </div>
       </React.Fragment>
     );
   }

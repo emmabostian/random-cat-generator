@@ -1,8 +1,9 @@
 import React from "react";
 
 const Logo = () => (
-  <div style={{ position: "absolute", top: "30px", left: "50px" }}>
+  <div style={{ marginLeft: "2rem", paddingTop: "1rem"}}>
     <svg
+      class="catSVG"
       xmlns="http://www.w3.org/2000/svg"
       width="300"
       height="62"

@@ -4,15 +4,15 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  background-color: mistyrose;
 }
 
 .App {
   font-family: sans-serif;
-  text-align: center;
-  background-color: mistyrose;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* text-align: center; */
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   width: 100vw;
   height: 100vh;
   position: relative;
