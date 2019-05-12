@@ -1,8 +1,8 @@
-# random-cat-generator
+# [Random Cat :cat: Generator](http://randomcatgenerator.com)
 
-This is the source code for [randomcatgenerator.com](https://www.randomcatgenerator.com).
+Do you need a random flash of cat cuteness? Click below!
 
-
+<http://randomcatgenerator.com>
 
 ## How to contribute
 
