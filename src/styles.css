@@ -11,9 +11,34 @@ body {
   text-align: center;
   background-color: mistyrose;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
+
+.logo { 
+  /* height:0px; */
+  color: #FF877C;
+  /* align-self: flex-start; */
+  padding: 10px 20px;
+  transform: skewY(-4deg);
+}
+
+.logo-text {
+  color: #FF877C;
+  font-family: "AndaleMono", "Andale Mono", monospace;
+}
+
+.footer {
+  justify-self: flex-end;
+  padding: 1rem;
+  color: #FF877C;
+  font-family: monospace;
+}
+
+.footer a {
+  color:inherit;
+} 
