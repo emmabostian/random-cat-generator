@@ -57,7 +57,7 @@ class CatPicture extends Component {
             />
           )}
           {this.state.loading && <Spinner />}
-          <button className="newCatButton" onClick={this.getCatPicture}>
+          <button className="newCatButton" onClick={this.getCatPicture} autoFocus>
             New cat
           </button>
         </div>
