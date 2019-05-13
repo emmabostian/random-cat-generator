@@ -8,7 +8,8 @@ import "./cats.css";
 class CatPicture extends Component {
   state = {
     loading: true,
-    catImage: null
+    catImage: null,
+    showCatImage: true,
   };
 
   getCatPicture = () => {
@@ -32,11 +33,11 @@ class CatPicture extends Component {
   };
 
   showCatImage = () => {
-    document.querySelector(".catImage").classList.add("catImage--visible");
+    this.setState({showCatImage: true})
   };
 
   hideCatImage = () => {
-    document.querySelector(".catImage").classList.remove("catImage--visible");
+    this.setState({showCatImage: false})
   };
 
   componentDidMount() {
@@ -52,7 +53,7 @@ class CatPicture extends Component {
               src={this.state.catImage}
               onLoad={this.showCatImage}
               alt="Cat"
-              className="catImage"
+              className={"catImage" + (this.state.showCatImage ? " catImage--visible" : "")}
             />
           )}
           {this.state.loading && <Spinner />}
