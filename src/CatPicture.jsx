@@ -1,69 +1,61 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { getCatPhoto } from "./api";
 
 import Spinner from "./Spinner";
 
 import "./cats.css";
 
-class CatPicture extends Component {
-  state = {
-    loading: true,
-    catImage: null,
-    showCatImage: true,
-  };
+function CatPicture() {
+  const [loading, setLoading] = useState(true)
+  const [catImage, setCatImage] = useState(null)
+  const [catImageisShown, setCatImageisShown] = useState(true)
 
-  getCatPicture = () => {
-    if (this.state.catImage) {
-      this.hideCatImage();
+  function getCatPicture() {
+    if (catImage) {
+      hideCatImage();
       setTimeout(() => {
-        this.setState({ catImage: null });
+        setCatImage(null);
       }, 100);
     }
-    this.setState({ loading: true });
+    setLoading(true);
     (async () => {
       const catPic = await getCatPhoto();
-      this.setState({
-        catImage: catPic[0].url
-      });
+      setCatImage(catPic[0].url);
       setTimeout(() => {
-        this.setState({ loading: false });
-        this.showCatImage();
+        setLoading(false);
+        showCatImage();
       }, 1200);
     })();
   };
 
-  showCatImage = () => {
-    this.setState({showCatImage: true})
+  function showCatImage() {
+    setCatImageisShown(true)
   };
 
-  hideCatImage = () => {
-    this.setState({showCatImage: false})
+  function hideCatImage() {
+    setCatImageisShown(false)
   };
 
-  componentDidMount() {
-    this.getCatPicture();
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <div id="catContainer">
-          {this.state.catImage && (
-            <img
-              src={this.state.catImage}
-              onLoad={this.showCatImage}
-              alt="Cat"
-              className={"catImage" + (this.state.showCatImage ? " catImage--visible" : "")}
-            />
-          )}
-          {this.state.loading && <Spinner />}
-          <button className="newCatButton" onClick={this.getCatPicture}>
-            New cat
-          </button>
-        </div>
-      </React.Fragment>
-    );
-  }
+  useEffect(getCatPicture,[])
+  
+  return (
+    <React.Fragment>
+      <div id="catContainer">
+        {catImage && (
+          <img
+            src={catImage}
+            onLoad={showCatImage}
+            alt="Cat"
+            className={"catImage" + (catImageisShown ? " catImage--visible" : "")}
+          />
+        )}
+        {loading && <Spinner />}
+        <button className="newCatButton" onClick={getCatPicture}>
+          New cat
+        </button>
+      </div>
+    </React.Fragment>
+  );
 }
 
 export default CatPicture;
