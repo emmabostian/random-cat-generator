@@ -24,14 +24,12 @@ function CatPicture() {
   return (
     <React.Fragment>
       <div id="catContainer">
-        {catImage && (
-          <img
-            src={catImage}
-            onLoad={handleOnLoad}
-            alt="Cat"
-            className={"catImage" + (!loading ? " catImage--visible" : "")}
-          />
-        )}
+        <img
+          src={catImage}
+          onLoad={handleOnLoad}
+          alt="Cat"
+          className={"catImage" + (!loading ? " catImage--visible" : "")}
+        />
         {loading && <Spinner />}
         <button className="newCatButton" onClick={getCatPicture}>
           New cat
