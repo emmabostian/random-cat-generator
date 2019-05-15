@@ -8,17 +8,14 @@ import "./cats.css";
 function CatPicture() {
   const [loading, setLoading] = useState(true)
   const [catImage, setCatImage] = useState(null)
-  const [catImageisShown, setCatImageisShown] = useState(true)
 
   async function getCatPicture() {
-    setCatImageisShown(false)
     setLoading(true);
     const catPic = await getCatPhoto();
     setCatImage(catPic[0].url);
   };
 
   function handleOnLoad() {
-    setCatImageisShown(true)
     setLoading(false)
   }
 
