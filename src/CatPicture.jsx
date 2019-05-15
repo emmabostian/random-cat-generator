@@ -10,31 +10,17 @@ function CatPicture() {
   const [catImage, setCatImage] = useState(null)
   const [catImageisShown, setCatImageisShown] = useState(true)
 
-  function getCatPicture() {
-    if (catImage) {
-      hideCatImage();
-      setTimeout(() => {
-        setCatImage(null);
-      }, 100);
-    }
-    setLoading(true);
-    (async () => {
-      const catPic = await getCatPhoto();
-      setCatImage(catPic[0].url);
-      setTimeout(() => {
-        setLoading(false);
-        showCatImage();
-      }, 1200);
-    })();
-  };
-
-  function showCatImage() {
-    setCatImageisShown(true)
-  };
-
-  function hideCatImage() {
+  async function getCatPicture() {
     setCatImageisShown(false)
+    setLoading(true);
+    const catPic = await getCatPhoto();
+    setCatImage(catPic[0].url);
   };
+
+  function handleOnLoad() {
+    setCatImageisShown(true)
+    setLoading(false)
+  }
 
   useEffect(getCatPicture,[])
   
@@ -44,9 +30,9 @@ function CatPicture() {
         {catImage && (
           <img
             src={catImage}
-            onLoad={showCatImage}
+            onLoad={handleOnLoad}
             alt="Cat"
-            className={"catImage" + (catImageisShown ? " catImage--visible" : "")}
+            className={"catImage" + (!loading ? " catImage--visible" : "")}
           />
         )}
         {loading && <Spinner />}
