@@ -1,7 +1,7 @@
 import React from "react";
 
 const Logo = () => (
-  <div style={{ position: "absolute", top: "30px", left: "50px" }}>
+  <header style={{ width: "100%", marginTop: "4vh", marginBottom: "4vh", paddingLeft: "10%" }}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="300"
@@ -37,7 +37,7 @@ const Logo = () => (
         </text>
       </g>
     </svg>
-  </div>
+  </header>
 );
 
 export default Logo;
