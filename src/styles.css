@@ -8,11 +8,10 @@ body {
 
 .App {
   font-family: sans-serif;
-  text-align: center;
   background-color: mistyrose;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-flow: column nowrap;
+  align-items: center; 
   width: 100vw;
   height: 100vh;
   position: relative;
